@@ -1,4 +1,4 @@
-# Rooted-A-Farmer-s-Diary 
+# Rooted: A Farmer's Diary 🌱
 (unedited)
 
 I. A brief project overview
