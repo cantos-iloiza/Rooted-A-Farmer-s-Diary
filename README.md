@@ -4,7 +4,7 @@
 
 I. A brief project overview 🌱📖👩‍🌾
 
-    This project aims to assist small-scale and home-based farmers by helping them monitor crop growth, providing reminders for watering and fertilizing schedules, and identifying the best planting times for seasonal vegetables. The system focuses on vegetables that can be grown in backyard gardens, supporting SDG 2 (Zero Hunger) and SDG 12 (Responsible Consumption and Production).
+This project aims to assist small-scale and home-based farmers by helping them monitor crop growth, providing reminders for watering and fertilizing schedules, and identifying the best planting times for seasonal vegetables. The system focuses on vegetables that can be grown in backyard gardens, supporting SDG 2 (Zero Hunger) and SDG 12 (Responsible Consumption and Production).
 
 II. Explanation of how OOP principles were applied 
   
@@ -56,9 +56,9 @@ III. Details of the Chosen SDG and Its Integration into the Project
 
 IV. Instructions for running the program 💻➡️📜
 
-  A. Running the Program
+  A. Starting the Program
 
-    In order to run the program, you have to run the code through the Main Class.
+In order to run the program, you have to run the code through the Main Class.
 
   B. Program Walkthrough
   
@@ -112,7 +112,7 @@ C. Key Features
 
 D. Exiting the Program
   
-    To exit, either log out and select Exit from the login menu or choose Log Out and confirm your choice. If you were to log out, you can Sign Up or Log In an account again.
+To exit, either log out and select Exit from the login menu or choose Log Out and confirm your choice. If you were to log out, you can Sign Up or Log In an account again.
 
 * . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦
 
