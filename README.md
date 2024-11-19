@@ -10,49 +10,49 @@ II. Explanation of how OOP principles were applied
   
   A. Encapsulation 🛡️📦
   
-    Encapsulation was used to keep the details of each class hidden from other parts of the program and to only allow access to necessary information through public methods:
+  Encapsulation was used to keep the details of each class hidden from other parts of the program and to only allow access to necessary information through public methods:
   
-    In the Crop class, variables like name, type, and wateringSchedule are private. They can only be accessed or modified using getter methods like getName() or getWateringSchedule(). This ensures that the internal details of a crop remain secure and cannot be directly changed by other classes.
+  In the Crop class, variables like name, type, and wateringSchedule are private. They can only be accessed or modified using getter methods like getName() or getWateringSchedule(). This ensures that the internal details of a crop remain secure and cannot be directly changed by other classes.
   
-    The FarmerUser class keeps user information such as username and password private. Only methods like login() or register() allow controlled access to these details, preventing accidental or unauthorized modifications.
+  The FarmerUser class keeps user information such as username and password private. Only methods like login() or register() allow controlled access to these details, preventing accidental or unauthorized modifications.
   
   B. Inheritance 🧬➡️📋
   
-    Inheritance was applied to reuse code and extend functionality. For instance:
+  Inheritance was applied to reuse code and extend functionality. For instance:
   
-    Although not explicitly visible in this setup, similar functionality for different user types or crop categories could be added by extending the FarmerUser or Crop classes. For example, a PremiumFarmerUser could inherit from FarmerUser and add new features like premium tools or analytics.
+  Although not explicitly visible in this setup, similar functionality for different user types or crop categories could be added by extending the FarmerUser or Crop classes. For example, a PremiumFarmerUser could inherit from FarmerUser and add new features like premium tools or analytics.
   
-    The InventoryManager class works closely with the Inventory class, showing how specific functionality can be delegated and potentially extended if additional inventory features are required.
+  The InventoryManager class works closely with the Inventory class, showing how specific functionality can be delegated and potentially extended if additional inventory features are required.
   
 C. Polymorphism 🎭🔄🤹
   
-    Polymorphism was used to allow different behaviors in classes while keeping their interfaces consistent:
+  Polymorphism was used to allow different behaviors in classes while keeping their interfaces consistent:
   
-    In the Crop class, the toString() method is overridden to provide a detailed and formatted description of the crop. This allows objects of the Crop type to return meaningful information when converted to a string.
+  In the Crop class, the toString() method is overridden to provide a detailed and formatted description of the crop. This allows objects of the Crop type to return meaningful information when converted to a string.
   
-    The manageCrops() method in the CropManagement class can handle different types of crops using the same method calls, even if new crop subclasses are added later.
+  The manageCrops() method in the CropManagement class can handle different types of crops using the same method calls, even if new crop subclasses are added later.
   
 D. Abstraction 🔍✨🧩
   
-    Abstraction was applied by breaking the program into smaller, focused classes that handle specific parts of the project:
+  Abstraction was applied by breaking the program into smaller, focused classes that handle specific parts of the project:
   
-    The Crop class abstracts details about crops, like their growth stages, fertilizer schedules, and watering needs, so other classes don’t need to worry about these details.
+  The Crop class abstracts details about crops, like their growth stages, fertilizer schedules, and watering needs, so other classes don’t need to worry about these details.
   
-    The Inventory class manages all the inventory-related tasks, like tracking seeds and tools, without exposing how items are stored internally.
+  The Inventory class manages all the inventory-related tasks, like tracking seeds and tools, without exposing how items are stored internally.
   
-    The FarmerNotes class abstracts the note-keeping functionality, allowing farmers to add, view, or delete notes without concerning themselves with the actual data storage format.
+  The FarmerNotes class abstracts the note-keeping functionality, allowing farmers to add, view, or delete notes without concerning themselves with the actual data storage format.
   
-    This division makes the program easier to manage and extend in the future.
+  This division makes the program easier to manage and extend in the future.
   
 III. Details of the Chosen SDG and Its Integration into the Project
   
   SDG 2: Zero Hunger 🌾🥦🍅
   
-    Integration: The project helps farmers grow food more efficiently by providing tools to manage crops, monitor growth stages, and optimize planting schedules. This ensures higher yields and reduces wastage.
+  Integration: The project helps farmers grow food more efficiently by providing tools to manage crops, monitor growth stages, and optimize planting schedules. This ensures higher yields and reduces wastage.
   
   SDG 12: Responsible Consumption and Production ♻️💧⚙️
   
-    Integration: The system tracks and advises on the use of resources like seeds, water, and fertilizer. It encourages sustainable farming practices by providing accurate schedules and avoiding overuse of inputs.
+  Integration: The system tracks and advises on the use of resources like seeds, water, and fertilizer. It encourages sustainable farming practices by providing accurate schedules and avoiding overuse of inputs.
 
 IV. Instructions for running the program 💻➡️📜
 
