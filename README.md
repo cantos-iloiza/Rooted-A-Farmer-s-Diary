@@ -50,14 +50,15 @@ A. Running the Program
 B. Program Walkthrough
   
   Welcome Screen: Upon launching, the program will display a welcome message and prompt you to enter today's date in the format MM-dd-yyyy.
+ 
   Login or Sign Up: You can log in with an existing account or create a new one by selecting the respective option. For a new account, enter a username and password. Successful registration will redirect you to the main menu.
+  
   Main Menu:
-    The main menu provides the following options:
-    Crop Management: Manage your crops.
-    PlantWiki: Learn about available crops and their details.
-    Farmer's Notes: Add or view personal notes.
-    Inventory: View and update your inventory.
-    Log Out: Return to the login menu.
+    1. Crop Management: Manage your crops.
+    2. PlantWiki: Learn about available crops and their details.
+    3. Farmer's Notes: Add or view personal notes.
+    4. Inventory: View and update your inventory.
+    5. Log Out: Return to the login menu.
 
 
 C. Key Features
