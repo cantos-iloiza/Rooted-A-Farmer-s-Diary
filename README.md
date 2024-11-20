@@ -6,6 +6,26 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ---
 
+## Table of Contents 📑
+
+1. [Project Overview](#i-project-overview-🌱📖👩‍🌾)
+2. [Application of OOP Principles](#ii-application-of-oop-principles-💡)
+   - [Encapsulation](#a-encapsulation-🛡️📦)
+   - [Package Encapsulation](#a1-package-encapsulation-📦🔐)
+   - [Inheritance](#b-inheritance-🧬➡️📋)
+   - [Polymorphism](#c-polymorphism-🎭🔄🤹)
+   - [Abstraction](#d-abstraction-🔍✨🧩)
+3. [Integration of SDGs](#iii-integration-of-sdgs-🌍)
+   - [SDG 2: Zero Hunger](#sdg-2-zero-hunger-🌾🥦🍅)
+   - [SDG 12: Responsible Consumption and Production](#sdg-12-responsible-consumption-and-production-♻️💧⚙️)
+4. [How to Run the Program](#iv-how-to-run-the-program-💻➡️📜)
+   - [Starting the Program](#a-starting-the-program-🚀)
+   - [Program Walkthrough](#b-program-walkthrough-📋)
+   - [Key Features](#c-key-features-🔑)
+   - [Exiting the Program](#d-exiting-the-program-🚪)
+
+---
+
 ## I. Project Overview 🌱📖👩‍🌾
 
 This project aims to assist small-scale and home-based farmers by:
@@ -78,13 +98,13 @@ Program functionality is broken into focused classes:
 
 ## IV. How to Run the Program 💻➡️📜  
 
-### A. **Starting the Program**  
+### A. **Starting the Program** 🚀
 1. Use **Visual Studio Code** (or any Java-supported IDE).  
 2. Run the program through the **Main Class**.
 
 ---
 
-### B. **Program Walkthrough**  
+### B. **Program Walkthrough** 📋 
 
 #### 1. **Welcome Screen**  
 - Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
@@ -103,7 +123,7 @@ Options available:
 
 ---
 
-### C. **Key Features**  
+### C. **Key Features** 🔑
 
 #### 1. **Crop Management**  
 - **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
@@ -124,7 +144,7 @@ Options available:
 
 ---
 
-### D. **Exiting the Program**  
+### D. **Exiting the Program** 🚪 
 - Log out via the menu and select **Exit**, or choose **Log Out** and confirm.  
 - Once logged out, you can sign up or log in again.
 
