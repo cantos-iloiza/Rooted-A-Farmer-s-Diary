@@ -19,10 +19,10 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
    - [SDG 2: Zero Hunger](#sdg-2-zero-hunger)
    - [SDG 12: Responsible Consumption and Production](#sdg-12-responsible-consumption-and-production)
 4. [How to Run the Program](#iv-how-to-run-the-program)
-   - [Starting the Program](#a-starting-the-program🚀)
-   - [Program Walkthrough](#b-program-walkthrough📋)
-   - [Key Features](#c-key-features🔑)
-   - [Exiting the Program](#d-exiting-the-program🚪)
+   - [Starting the Program](#a-starting-the-program)
+   - [Program Walkthrough](#b-program-walkthrough)
+   - [Key Features](#c-key-features)
+   - [Exiting the Program](#d-exiting-the-program)
 
 ---
 
