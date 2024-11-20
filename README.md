@@ -18,10 +18,13 @@ This project aims to assist small-scale and home-based farmers by helping them m
 
   Package encapsulation was also implemented by organizing related classes into packages to logically separate functionalities and control access between them:
   
-    The management package contains classes like CropManagement and InventoryManager that deal with operational logic.
-    The data package includes data models like Crop, FarmerUser, and Inventory to manage the internal data structures.
-    Using package-private access (default visibility), certain classes or methods were restricted to be accessible only within their package, ensuring modularity and safeguarding sensitive logic.
-    This approach enables secure and maintainable integration between features, reducing the chances of external interference in core operations.
+  The management package contains classes like CropManagement and InventoryManager that deal with operational logic.
+  
+  The data package includes data models like Crop, FarmerUser, and Inventory to manage the internal data structures.
+  
+  Using package-private access (default visibility), certain classes or methods were restricted to be accessible only within their package, ensuring modularity and safeguarding sensitive logic.
+  
+  This approach enables secure and maintainable integration between features, reducing the chances of external interference in core operations.
     
   B. Inheritance 🧬➡️📋
   
