@@ -26,7 +26,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ---
 
-## I. Project Overview 🌱📖👩‍🌾
+## I. Project Overview
 
 This project aims to assist small-scale and home-based farmers by:
 - **Monitoring crop growth**
@@ -40,13 +40,13 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 
 ## II. Application of OOP Principles 💡  
 
-### A. **Encapsulation** 🛡️📦  
+### A. **Encapsulation**  
 - **Crop Class:** Variables like `name`, `type`, and `wateringSchedule` are private. Access or modification is allowed only through getters and setters (e.g., `getName()` and `getWateringSchedule()`), ensuring data security.
 - **FarmerUser Class:** User credentials (`username` and `password`) are private and accessed only via methods like `login()` or `register()`. This prevents unauthorized access.
 
 ---
 
-### A.1 **Package Encapsulation** 📦🔐  
+### A.1 **Package Encapsulation**  
 Classes are grouped into packages, restricting unnecessary access:  
 1. **Crop Management Package:**  
    Includes `Crop`, `CropManagement`, and `PlantWiki`. Details are hidden within the package, and public interfaces expose necessary functionality.
@@ -59,7 +59,7 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### B. **Inheritance** 🧬➡️📋  
+### B. **Inheritance**  
 - Extend existing classes for specialized use cases:  
   - `PremiumFarmerUser` inherits from `FarmerUser` to add analytics and premium tools.  
   - Potential new crop subclasses (e.g., `ExoticCrop`) can build on the `Crop` base class.
@@ -68,13 +68,13 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### C. **Polymorphism** 🎭🔄🤹  
+### C. **Polymorphism**  
 - The **`toString()` Method:** In the `Crop` class, overridden to return a formatted crop description.  
 - **`manageCrops()` Method:** Handles all crop types using a unified interface, allowing easy addition of new crop subclasses.
 
 ---
 
-### D. **Abstraction** 🔍✨🧩  
+### D. **Abstraction**  
 Program functionality is broken into focused classes:  
 - **Crop Class:** Manages crop growth stages, watering, and fertilizing schedules.  
 - **Inventory Class:** Handles resource tracking without exposing internal storage methods.  
@@ -84,27 +84,27 @@ Program functionality is broken into focused classes:
 
 ## III. Integration of SDGs 🌍  
 
-### **SDG 2: Zero Hunger** 🌾🥦🍅  
+### **SDG 2: Zero Hunger**  
 **How:**  
 - Tools to manage crops, monitor growth stages, and optimize planting schedules.  
 - Ensures higher yields and reduces food waste.  
 
-### **SDG 12: Responsible Consumption and Production** ♻️💧⚙️  
+### **SDG 12: Responsible Consumption and Production**  
 **How:**  
 - Tracks and advises on resource usage (e.g., seeds, water, and fertilizer).  
 - Encourages sustainable farming by providing optimized schedules to prevent overuse.
 
 ---
 
-## IV. How to Run the Program 💻➡️📜  
+## IV. How to Run the Program  
 
-### A. **Starting the Program** 🚀
+### A. **Starting the Program** 🚀  
 1. Use **Visual Studio Code** (or any Java-supported IDE).  
 2. Run the program through the **Main Class**.
 
 ---
 
-### B. **Program Walkthrough** 📋 
+### B. **Program Walkthrough** 📋  
 
 #### 1. **Welcome Screen**  
 - Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
@@ -123,7 +123,7 @@ Options available:
 
 ---
 
-### C. **Key Features** 🔑
+### C. **Key Features** 🔑  
 
 #### 1. **Crop Management**  
 - **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
@@ -144,10 +144,10 @@ Options available:
 
 ---
 
-### D. **Exiting the Program** 🚪 
+### D. **Exiting the Program** 🚪  
 - Log out via the menu and select **Exit**, or choose **Log Out** and confirm.  
 - Once logged out, you can sign up or log in again.
 
 ---
 
-* . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ   
+* . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ
