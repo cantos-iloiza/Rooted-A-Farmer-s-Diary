@@ -2,11 +2,11 @@
 
 * . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦
 
-I. A brief project overview 🌱📖👩‍🌾
+# I. A brief project overview 🌱📖👩‍🌾
 
 This project aims to assist small-scale and home-based farmers by helping them monitor crop growth, providing reminders for watering and fertilizing schedules, and identifying the best planting times for seasonal vegetables. The system focuses on vegetables that can be grown in backyard gardens, supporting SDG 2 (Zero Hunger) and SDG 12 (Responsible Consumption and Production).
 
-II. Explanation of how OOP principles were applied 
+# II. Explanation of how OOP principles were applied 
   
   A. Encapsulation 🛡️📦
   
@@ -44,7 +44,7 @@ D. Abstraction 🔍✨🧩
   
   This division makes the program easier to manage and extend in the future.
   
-III. Details of the Chosen SDG and Its Integration into the Project
+# III. Details of the Chosen SDG and Its Integration into the Project
   
   SDG 2: Zero Hunger 🌾🥦🍅
   
@@ -54,11 +54,11 @@ III. Details of the Chosen SDG and Its Integration into the Project
   
   Integration: The system tracks and advises on the use of resources like seeds, water, and fertilizer. It encourages sustainable farming practices by providing accurate schedules and avoiding overuse of inputs.
 
-IV. Instructions for running the program 💻➡️📜
+# IV. Instructions for running the program 💻➡️📜
 
   A. Starting the Program
 
-In order to run the program, you have to run the code through the Main Class.
+While making this program, I've used Visual Studio Code, along with other external extensions to implement Java. And in order to run the program, you have to run the code through the Main Class.
 
   B. Program Walkthrough
   
