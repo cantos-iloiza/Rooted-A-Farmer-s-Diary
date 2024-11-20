@@ -1,129 +1,139 @@
 # Rooted: A Farmer's Diary 🌱
 
-* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦¸ . ﹢ ° ¸. ° ˖ ･ ·̩｡ ☆ ﾟ ＊ ¸*
+---
 
-# I. A brief project overview 🌱📖👩‍🌾
+> A tool for small-scale and home-based farmers to monitor crop growth, manage resources, and optimize planting schedules, supporting **SDG 2 (Zero Hunger)** and **SDG 12 (Responsible Consumption and Production).**
 
-This project aims to assist small-scale and home-based farmers by helping them monitor crop growth, providing reminders for watering and fertilizing schedules, and identifying the best planting times for seasonal vegetables. The system focuses on vegetables that can be grown in backyard gardens, supporting SDG 2 (Zero Hunger) and SDG 12 (Responsible Consumption and Production).
+---
 
-# II. Explanation of how OOP principles were applied 
-  
-  A. Encapsulation 🛡️📦
-  
-  Encapsulation was used to keep the details of each class hidden from other parts of the program and to only allow access to necessary information through public methods:
-  
-  In the Crop class, variables like name, type, and wateringSchedule are private. They can only be accessed or modified using getter methods like getName() or getWateringSchedule(). This ensures that the internal details of a crop remain secure and cannot be directly changed by other classes.
-  
-  The FarmerUser class keeps user information such as username and password private. Only methods like login() or register() allow controlled access to these details, preventing accidental or unauthorized modifications.
+## I. Project Overview 🌱📖👩‍🌾
 
-  Package encapsulation was also implemented by organizing related classes into packages to logically separate functionalities and control access between them:
-  
-  The management package contains classes like CropManagement and InventoryManager that deal with operational logic.
-  
-  The data package includes data models like Crop, FarmerUser, and Inventory to manage the internal data structures.
-  
-  Using package-private access (default visibility), certain classes or methods were restricted to be accessible only within their package, ensuring modularity and safeguarding sensitive logic.
-  
-  This approach enables secure and maintainable integration between features, reducing the chances of external interference in core operations.
-    
-  B. Inheritance 🧬➡️📋
-  
-  Inheritance was applied to reuse code and extend functionality. For instance:
-  
-  Although not explicitly visible in this setup, similar functionality for different user types or crop categories could be added by extending the FarmerUser or Crop classes. For example, a PremiumFarmerUser could inherit from FarmerUser and add new features like premium tools or analytics.
-  
-  The InventoryManager class works closely with the Inventory class, showing how specific functionality can be delegated and potentially extended if additional inventory features are required.
-  
-C. Polymorphism 🎭🔄🤹
-  
-  Polymorphism was used to allow different behaviors in classes while keeping their interfaces consistent:
-  
-  In the Crop class, the toString() method is overridden to provide a detailed and formatted description of the crop. This allows objects of the Crop type to return meaningful information when converted to a string.
-  
-  The manageCrops() method in the CropManagement class can handle different types of crops using the same method calls, even if new crop subclasses are added later.
-  
-D. Abstraction 🔍✨🧩
-  
-  Abstraction was applied by breaking the program into smaller, focused classes that handle specific parts of the project:
-  
-  The Crop class abstracts details about crops, like their growth stages, fertilizer schedules, and watering needs, so other classes don’t need to worry about these details.
-  
-  The Inventory class manages all the inventory-related tasks, like tracking seeds and tools, without exposing how items are stored internally.
-  
-  The FarmerNotes class abstracts the note-keeping functionality, allowing farmers to add, view, or delete notes without concerning themselves with the actual data storage format.
-  
-  This division makes the program easier to manage and extend in the future.
-  
-# III. Details of the Chosen SDG and Its Integration into the Project
-  
-  SDG 2: Zero Hunger 🌾🥦🍅
-  
-  Integration: The project helps farmers grow food more efficiently by providing tools to manage crops, monitor growth stages, and optimize planting schedules. This ensures higher yields and reduces wastage.
-  
-  SDG 12: Responsible Consumption and Production ♻️💧⚙️
-  
-  Integration: The system tracks and advises on the use of resources like seeds, water, and fertilizer. It encourages sustainable farming practices by providing accurate schedules and avoiding overuse of inputs.
+This project aims to assist small-scale and home-based farmers by:
+- **Monitoring crop growth**
+- **Providing reminders** for watering and fertilizing schedules
+- **Identifying the best planting times** for seasonal vegetables  
 
-# IV. Instructions for running the program 💻➡️📜
+It focuses on vegetables suitable for backyard gardens, encouraging sustainable farming and efficient resource use.
 
-  A. Starting the Program
+---
 
-While making this program, I've used Visual Studio Code, along with other external extensions to implement Java. And in order to run the program, you have to run the code through the Main Class.
+## II. Application of OOP Principles 💡  
 
-  B. Program Walkthrough
-  
-    Welcome Screen: Upon launching, the program will display a welcome message and prompt you to enter today's date in the format MM-dd-yyyy.
- 
-    Login or Sign Up: You can log in with an existing account or create a new one by selecting the respective option. For a new account, enter a username and password. Successful registration will redirect you to the main menu.
-  
-  Main Menu:
-  
-    1. Crop Management: Manage your crops.
-    
-    2. PlantWiki: Learn about available crops and their details.
-    
-    3. Farmer's Notes: Add or view personal notes.
-    
-    4. Inventory: View and update your inventory.
-    
-    5. Log Out: Return to the login menu.
+### A. **Encapsulation** 🛡️📦  
+- **Crop Class:** Variables like `name`, `type`, and `wateringSchedule` are private. Access or modification is allowed only through getters and setters (e.g., `getName()` and `getWateringSchedule()`), ensuring data security.
+- **FarmerUser Class:** User credentials (`username` and `password`) are private and accessed only via methods like `login()` or `register()`. This prevents unauthorized access.
 
+---
 
-C. Key Features
-  
-  1. Crop Management
+### B. **Package Encapsulation** 📦🔐  
+Classes are grouped into packages, restricting unnecessary access:  
+1. **Crop Management Package:**  
+   Includes `Crop`, `CropManagement`, and `PlantWiki`. Details are hidden within the package, and public interfaces expose necessary functionality.
+   
+2. **User Management Package:**  
+   Contains `FarmerUser` and `PremiumFarmerUser` for managing user authentication and permissions.
 
-    Choose to plant a crop, view watering schedules, check fertilizer schedules, or track crop growth stages.
+3. **Inventory Package:**  
+   Encapsulates `Inventory` and `InventoryManager` to handle resources while hiding internal storage mechanisms.
 
-    Plant a Crop: Choose a crop, verify seed availability, and provide a planting date.
-    
-    Watering Schedule: Displays how many days until the next watering is due.
-    
-    Fertilizer Schedule: Lists upcoming fertilizer applications.
-    
-    Growth Stages: Displays the current growth stage of planted crops.
-    
-  3. PlantWiki
+---
 
-    View details of crops like type, season, watering schedule, and fertilizer schedule.
-    
-  5. Farmer’s Notes
+### C. **Inheritance** 🧬➡️📋  
+- Extend existing classes for specialized use cases:  
+  - `PremiumFarmerUser` inherits from `FarmerUser` to add analytics and premium tools.  
+  - Potential new crop subclasses (e.g., `ExoticCrop`) can build on the `Crop` base class.
 
-    Add notes by specifying a date and entering text.
-    
-    View all saved notes.
-    
-  7. Inventory Management
+- The `InventoryManager` extends inventory functionalities by reusing code from the `Inventory` class.
 
-    View the available items in your inventory.
-    
-    Restock items or use resources by entering their names and quantities.
+---
 
+### D. **Polymorphism** 🎭🔄🤹  
+- The **`toString()` Method:** In the `Crop` class, overridden to return a formatted crop description.  
+- **`manageCrops()` Method:** Handles all crop types using a unified interface, allowing easy addition of new crop subclasses.
 
-D. Exiting the Program
-  
-To exit, either log out and select Exit from the login menu or choose Log Out and confirm your choice. If you were to log out, you can Sign Up or Log In an account again.
+---
 
-* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦ ¸ . ﹢ ° ¸. ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸* . ﹢ ˖ ✦¸ . ﹢ ° ¸. ° ˖ ･ ·̩｡ ☆ ﾟ ＊ ¸*
+### E. **Abstraction** 🔍✨🧩  
+Program functionality is broken into focused classes:  
+- **Crop Class:** Manages crop growth stages, watering, and fertilizing schedules.  
+- **Inventory Class:** Handles resource tracking without exposing internal storage methods.  
+- **FarmerNotes Class:** Simplifies note-keeping tasks like adding, viewing, and deleting notes.
 
+---
 
+## III. Integration of SDGs 🌍  
+
+### **SDG 2: Zero Hunger** 🌾🥦🍅  
+**How:**  
+- Tools to manage crops, monitor growth stages, and optimize planting schedules.  
+- Ensures higher yields and reduces food waste.  
+
+### **SDG 12: Responsible Consumption and Production** ♻️💧⚙️  
+**How:**  
+- Tracks and advises on resource usage (e.g., seeds, water, and fertilizer).  
+- Encourages sustainable farming by providing optimized schedules to prevent overuse.
+
+---
+
+## IV. How to Run the Program 💻➡️📜  
+
+### A. **Starting the Program**  
+1. Use **Visual Studio Code** (or any Java-supported IDE).  
+2. Run the program through the **Main Class**.
+
+---
+
+### B. **Program Walkthrough**  
+
+#### 1. **Welcome Screen**  
+- Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
+
+#### 2. **Login or Sign Up**  
+- Choose to log in with existing credentials or create a new account.  
+- Successful registration redirects to the main menu.
+
+#### 3. **Main Menu**  
+Options available:  
+- **1. Crop Management:** Manage crops (e.g., planting, watering, fertilizing).  
+- **2. PlantWiki:** Learn about crop details and schedules.  
+- **3. Farmer's Notes:** Add or view personal notes.  
+- **4. Inventory:** View or update resources.  
+- **5. Log Out:** Return to the login menu.
+
+---
+
+### C. **Key Features**  
+
+#### 1. **Crop Management**  
+- **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
+- **Watering Schedule:** Displays days until the next watering.  
+- **Fertilizer Schedule:** Lists upcoming fertilizer applications.  
+- **Growth Stages:** Displays the current growth stage of crops.
+
+#### 2. **PlantWiki**  
+- Learn about each crop's type, season, watering needs, and fertilizer schedule.
+
+#### 3. **Farmer’s Notes**  
+- **Add Notes:** Enter a date and text.  
+- **View Notes:** Review all saved notes.
+
+#### 4. **Inventory Management**  
+- View current items in the inventory.  
+- Restock or use resources by specifying names and quantities.
+
+---
+
+### D. **Exiting the Program**  
+- Log out via the menu and select **Exit**, or choose **Log Out** and confirm.  
+- Once logged out, you can sign up or log in again.
+
+---
+
+## V. Additional Notes 📝  
+This project is designed to be easily extendable and modular. Future updates may include:  
+- Premium user analytics tools.  
+- New crop types and resource optimization algorithms.
+
+---
+
+* . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ * . ﹢ ˖ ✦ ¸ . ﹢ ° ˖ ･ ·̩ ｡ ☆ ﾟ ＊ ¸ *  
