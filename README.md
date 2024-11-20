@@ -11,9 +11,10 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 This project aims to assist small-scale and home-based farmers by:
 - **Monitoring crop growth**
 - **Providing reminders** for watering and fertilizing schedules
-- **Identifying the best planting times** for seasonal vegetables  
+- **Identifying the best planting times** for seasonal vegetables
+- **Ensure optimal growth** for every crop enlisted.  
 
-It focuses on vegetables suitable for backyard gardens, encouraging sustainable farming and efficient resource use.
+It focuses on vegetables suitable for backyard gardens, encouraging sustainable home farming and efficient resource use.
 
 ---
 
