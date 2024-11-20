@@ -82,7 +82,7 @@ Program functionality is broken into focused classes:
 
 ---
 
-## III. Integration of SDGs 🌍  
+## III. Integration of SDGs 
 
 ### **SDG 2: Zero Hunger**  
 **How:**  
@@ -98,13 +98,13 @@ Program functionality is broken into focused classes:
 
 ## IV. How to Run the Program  
 
-### A. **Starting the Program** 🚀  
+### A. **Starting the Program**   
 1. Use **Visual Studio Code** (or any Java-supported IDE).  
 2. Run the program through the **Main Class**.
 
 ---
 
-### B. **Program Walkthrough** 📋  
+### B. **Program Walkthrough**   
 
 #### 1. **Welcome Screen**  
 - Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
@@ -123,7 +123,7 @@ Options available:
 
 ---
 
-### C. **Key Features** 🔑  
+### C. **Key Features** 
 
 #### 1. **Crop Management**  
 - **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
@@ -144,7 +144,7 @@ Options available:
 
 ---
 
-### D. **Exiting the Program** 🚪  
+### D. **Exiting the Program** 
 - Log out via the menu and select **Exit**, or choose **Log Out** and confirm.  
 - Once logged out, you can sign up or log in again.
 
