@@ -8,21 +8,21 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ## Table of Contents 📑
 
-1. [Project Overview](#i-project-overview-🌱📖👩‍🌾)
-2. [Application of OOP Principles](#ii-application-of-oop-principles-💡)
-   - [Encapsulation](#a-encapsulation-🛡️📦)
-   - [Package Encapsulation](#a1-package-encapsulation-📦🔐)
-   - [Inheritance](#b-inheritance-🧬➡️📋)
-   - [Polymorphism](#c-polymorphism-🎭🔄🤹)
-   - [Abstraction](#d-abstraction-🔍✨🧩)
-3. [Integration of SDGs](#iii-integration-of-sdgs-🌍)
-   - [SDG 2: Zero Hunger](#sdg-2-zero-hunger-🌾🥦🍅)
-   - [SDG 12: Responsible Consumption and Production](#sdg-12-responsible-consumption-and-production-♻️💧⚙️)
-4. [How to Run the Program](#iv-how-to-run-the-program-💻➡️📜)
-   - [Starting the Program](#a-starting-the-program-🚀)
-   - [Program Walkthrough](#b-program-walkthrough-📋)
-   - [Key Features](#c-key-features-🔑)
-   - [Exiting the Program](#d-exiting-the-program-🚪)
+1. [Project Overview](#i-project-overview)
+2. [Application of OOP Principles](#ii-application-of-oop-principles)
+   - [Encapsulation](#a-encapsulation)
+   - [Package Encapsulation](#a1-package-encapsulation)
+   - [Inheritance](#b-inheritance)
+   - [Polymorphism](#c-polymorphism)
+   - [Abstraction](#d-abstraction)
+3. [Integration of SDGs](#iii-integration-of-sdgs)
+   - [SDG 2: Zero Hunger](#sdg-2-zero-hunger)
+   - [SDG 12: Responsible Consumption and Production](#sdg-12-responsible-consumption-and-production)
+4. [How to Run the Program](#iv-how-to-run-the-program)
+   - [Starting the Program](#a-starting-the-program)
+   - [Program Walkthrough](#b-program-walkthrough)
+   - [Key Features](#c-key-features)
+   - [Exiting the Program](#d-exiting-the-program)
 
 ---
 
