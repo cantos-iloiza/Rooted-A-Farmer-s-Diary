@@ -2,7 +2,7 @@
 
 ---
 
-> A tool for small-scale and home-based farmers to monitor crop growth, manage resources, and optimize planting schedules, supporting **SDG 2 (Zero Hunger)** and **SDG 12 (Responsible Consumption and Production).**
+A tool for small-scale and home-based farmers to monitor crop growth, manage resources, and optimize planting schedules, supporting **SDG 2 (Zero Hunger)** and **SDG 12 (Responsible Consumption and Production).**
 
 ---
 
@@ -25,7 +25,7 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 
 ---
 
-### B. **Package Encapsulation** 📦🔐  
+### A.1 **Package Encapsulation** 📦🔐  
 Classes are grouped into packages, restricting unnecessary access:  
 1. **Crop Management Package:**  
    Includes `Crop`, `CropManagement`, and `PlantWiki`. Details are hidden within the package, and public interfaces expose necessary functionality.
@@ -38,7 +38,7 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### C. **Inheritance** 🧬➡️📋  
+### B. **Inheritance** 🧬➡️📋  
 - Extend existing classes for specialized use cases:  
   - `PremiumFarmerUser` inherits from `FarmerUser` to add analytics and premium tools.  
   - Potential new crop subclasses (e.g., `ExoticCrop`) can build on the `Crop` base class.
@@ -47,13 +47,13 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### D. **Polymorphism** 🎭🔄🤹  
+### C. **Polymorphism** 🎭🔄🤹  
 - The **`toString()` Method:** In the `Crop` class, overridden to return a formatted crop description.  
 - **`manageCrops()` Method:** Handles all crop types using a unified interface, allowing easy addition of new crop subclasses.
 
 ---
 
-### E. **Abstraction** 🔍✨🧩  
+### D. **Abstraction** 🔍✨🧩  
 Program functionality is broken into focused classes:  
 - **Crop Class:** Manages crop growth stages, watering, and fertilizing schedules.  
 - **Inventory Class:** Handles resource tracking without exposing internal storage methods.  
