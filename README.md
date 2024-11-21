@@ -26,7 +26,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ---
 
-## I. Project Overview
+🌱📖👩‍🌾 ## I. Project Overview
 
 This project aims to assist small-scale and home-based farmers by:
 - **Monitoring crop growth**
