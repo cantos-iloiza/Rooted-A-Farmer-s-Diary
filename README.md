@@ -37,7 +37,7 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 
 ---
 
-## II. Application of OOP Principles 💡  
+## II. Application of OOP Principles  
 
 ### A. **Encapsulation**  
 - **Crop Class:** Variables like `name`, `type`, and `wateringSchedule` are private. Access or modification is allowed only through getters and setters (e.g., `getName()` and `getWateringSchedule()`), ensuring data security.
