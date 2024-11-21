@@ -2,14 +2,12 @@ import cropmanager.CropInfo;
 import cropmanager.CropManagement;
 import cropmanager.PlantedCrop;
 import inventory.InventoryManager;
-import miscellaneous.FarmerNotes;
-import user.FarmerUser;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import user.FarmerUser;
 
 public class Main {
     private static ArrayList<PlantedCrop> plantedCrops = new ArrayList<>();
@@ -33,23 +31,27 @@ public class Main {
                     System.out.println("2. Sign Up");
                     System.out.println("3. Exit");
                     System.out.print("Choose an option: ");
-                    String option = scanner.nextLine();
+                    int option = getValidatedChoice(scanner);
 
                     switch (option) {
-                        case "1" -> user = handleLogin(scanner);
-                        case "2" -> user = handleSignup(scanner);
-                        case "3" -> {
+                        case 1:
+                            user = handleLogin(scanner);
+                            break;
+                        case 2:
+                            user = handleSignup(scanner);
+                            break;
+                        case 3:
                             System.out.println("Exiting Rooted. Goodbye!");
-                            appRunning = false;
                             return;
-                        }
-                        default -> System.out.println("Invalid choice. Please try again.");
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
                     }
+                    
                 }
 
                 CropInfo cropInfo = new CropInfo();
                 cropInfo.initializeCrops();
-                Inventory inventory = new Inventory();
+                CropManagement cropManagement = new CropManagement(cropInfo, user.getInventory());
 
                 boolean userLoggedIn = true;
                 while (userLoggedIn) {
@@ -67,17 +69,26 @@ public class Main {
                     
                     int choice = getValidatedChoice(scanner);
                     switch (choice) {
-                        case 1 -> new CropManagement(cropInfo, user.getInventory())
-                                   .manageCrops(scanner, user.getPlantedCrops());
-                        case 2 -> cropInfo.viewPlantWiki(scanner);
-                        case 3 -> user.getFarmerNotes().manageNotes(scanner);
-                        case 4 -> new InventoryManager(user.getInventory())
-                                   .manageInventory(scanner);
-                        case 5 -> {
+                        case 1:
+                            cropManagement.manageCrops(scanner, user.getPlantedCrops());
+                            break;
+                        case 2:
+                            cropInfo.viewPlantWiki(scanner);
+                            break;
+                        case 3:
+                            user.getFarmerNotes().manageNotes(scanner);
+                            break;
+                        case 4:
+                            InventoryManager inventoryManager = new InventoryManager(user.getInventory());
+                            inventoryManager.manageInventory(scanner);
+                            break;
+                        case 5:
                             System.out.println("Time to hit the haystack and recharge--your farm awaits your return!");
                             userLoggedIn = false;
-                        }
-                        default -> System.out.println("Invalid choice. Please try again.");
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please try again.");
+                            break;
                     }
                 }
             }
@@ -137,4 +148,12 @@ public class Main {
             return null;
         }
     }    
+
+    public static ArrayList<PlantedCrop> getPlantedCrops() {
+        return plantedCrops;
+    }
+
+    public static void setPlantedCrops(ArrayList<PlantedCrop> plantedCrops) {
+        Main.plantedCrops = plantedCrops;
+    }
 }
