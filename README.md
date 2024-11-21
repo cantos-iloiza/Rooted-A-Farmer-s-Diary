@@ -8,7 +8,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ## Table of Contents 📑
 
-1. [🌱📖👩‍🌾Project Overview](#i-project-overview)
+1. [Project Overview 🌱📖👩‍🌾](#i-project-overview)
 2. [Application of OOP Principles](#ii-application-of-oop-principles)
    - [Encapsulation](#a-encapsulation)
    - [Package Encapsulation](#a1-package-encapsulation)
@@ -26,7 +26,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 ---
 
-🌱📖👩‍🌾 ## I. Project Overview
+## I. Project Overview 🌱📖👩‍🌾
 
 This project aims to assist small-scale and home-based farmers by:
 - **Monitoring crop growth**
