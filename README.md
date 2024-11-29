@@ -10,7 +10,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 
 1. [Project Overview 🌱📖👩‍🌾](#i-project-overview)
 2. [Application of OOP Principles 💡](#ii-application-of-oop-principles)
-   - [Encapsulation🛡️📦](#a-encapsulation)
+   - [Encapsulation🛡️➡️📦](#a-encapsulation)
    - [Inheritance 🧬➡️📋](#b-inheritance)
    - [Polymorphism 🎭🔄🤹](#c-polymorphism)
    - [Abstraction 🔍✨🧩](#d-abstraction)
