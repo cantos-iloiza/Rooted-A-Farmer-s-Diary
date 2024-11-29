@@ -13,7 +13,7 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
    - [Encapsulation🛡️📦](#a-encapsulation)
    - [Inheritance 🧬➡️📋](#b-inheritance)
    - [Polymorphism 🎭🔄🤹](#c-polymorphism)
-   - [Abstraction 🔍✨🧩 ](#d-abstraction)
+   - [Abstraction 🔍✨🧩](#d-abstraction)
 3. [Integration of SDGs 🌍](#iii-integration-of-sdgs)
    - [SDG 2: Zero Hunger 🌾🥦🍅](#sdg-2-zero-hunger)
    - [SDG 12: Responsible Consumption and Production ♻️💧⚙️](#sdg-12-responsible-consumption-and-production)
