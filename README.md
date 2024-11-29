@@ -39,7 +39,7 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 
 ## 💡II. Application of OOP Principles
 
-### 🛡️📦A. Encapsulation
+### 🛡️A. Encapsulation
 Encapsulation is widely used in the application by declaring fields as `private` and providing controlled access via public methods like getters and setters. This protects the integrity of data and ensures its proper usage.
 
 1. **Crop Class**  
@@ -89,7 +89,7 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### 🧬➡️📋B. Inheritance
+### 🧬B. Inheritance
 While no explicit inheritance (`extends`) is present in the application, the code can be extended to introduce parent-child relationships for reusable or common behaviors. Future enhancements might include:
 
 1. Creating a base `User` class for shared user functionalities.  
@@ -97,7 +97,7 @@ While no explicit inheritance (`extends`) is present in the application, the cod
 
 ---
 
-### 🎭🔄🤹C. Polymorphism
+### 🎭C. Polymorphism
 Polymorphism is used to allow methods to behave differently depending on the context.
 
 1. **Method Overriding**  
@@ -112,7 +112,7 @@ Polymorphism is used to allow methods to behave differently depending on the con
 
 ---
 
-### 🔍✨🧩D. Abstraction
+### ✨D. Abstraction
 Abstraction is used to hide complex logic and expose only the necessary details through high-level methods and interfaces.
 
 1. **Crop Class**  
