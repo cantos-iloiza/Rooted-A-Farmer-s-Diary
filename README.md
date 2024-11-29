@@ -37,9 +37,9 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 
 ---
 
-## II. Application of OOP Principles
+## 💡II. Application of OOP Principles
 
-### A. Encapsulation
+### 🛡️📦A. Encapsulation
 Encapsulation is widely used in the application by declaring fields as `private` and providing controlled access via public methods like getters and setters. This protects the integrity of data and ensures its proper usage.
 
 1. **Crop Class**  
@@ -89,7 +89,7 @@ Classes are grouped into packages, restricting unnecessary access:
 
 ---
 
-### B. Inheritance
+### 🧬➡️📋B. Inheritance
 While no explicit inheritance (`extends`) is present in the application, the code can be extended to introduce parent-child relationships for reusable or common behaviors. Future enhancements might include:
 
 1. Creating a base `User` class for shared user functionalities.  
@@ -97,7 +97,7 @@ While no explicit inheritance (`extends`) is present in the application, the cod
 
 ---
 
-### C. Polymorphism
+### 🎭🔄🤹C. Polymorphism
 Polymorphism is used to allow methods to behave differently depending on the context.
 
 1. **Method Overriding**  
@@ -112,7 +112,7 @@ Polymorphism is used to allow methods to behave differently depending on the con
 
 ---
 
-### D. Abstraction
+### 🔍✨🧩D. Abstraction
 Abstraction is used to hide complex logic and expose only the necessary details through high-level methods and interfaces.
 
 1. **Crop Class**  
@@ -141,29 +141,29 @@ Abstraction is used to hide complex logic and expose only the necessary details 
 
 ---
 
-## III. Integration of SDGs 
+## 🌍III. Integration of SDGs 
 
-### **SDG 2: Zero Hunger**  
+### 🌾🥦🍅**SDG 2: Zero Hunger**  
 **How:**  
 - Tools to manage crops, monitor growth stages, and optimize planting schedules.  
 - Ensures higher yields and reduces food waste.  
 
-### **SDG 12: Responsible Consumption and Production**  
+### ♻️💧⚙️**SDG 12: Responsible Consumption and Production**  
 **How:**  
 - Tracks and advises on resource usage (e.g., seeds, water, and fertilizer).  
 - Encourages sustainable farming by providing optimized schedules to prevent overuse.
 
 ---
 
-## IV. How to Run the Program  
+## 💻➡️📜IV. How to Run the Program  
 
-### A. **Starting the Program**   
+### 🚀A. **Starting the Program**   
 1. Use **Visual Studio Code** (or any Java-supported IDE).  
 2. Run the program through the **Main Class**.
 
 ---
 
-### B. **Program Walkthrough**   
+### 📋B. **Program Walkthrough**   
 
 #### 1. **Welcome Screen**  
 - Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
@@ -182,7 +182,7 @@ Options available:
 
 ---
 
-### C. **Key Features** 
+### 🔑C. **Key Features** 
 
 #### 1. **Crop Management**  
 - **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
@@ -203,7 +203,7 @@ Options available:
 
 ---
 
-### D. **Exiting the Program** 
+### 🚪D. **Exiting the Program** 
 - Log out via the menu and select **Exit**, or choose **Log Out** and confirm.  
 - Once logged out, you can sign up or log in again.
 
