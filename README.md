@@ -43,57 +43,65 @@ It focuses on vegetables suitable for backyard gardens, encouraging sustainable 
 Encapsulation is widely used in the application by declaring fields as `private` and providing controlled access via public methods like getters and setters. This protects the integrity of data and ensures its proper usage.
 
 1. **Crop Class**  
-   - Fields such as `name`, `type`, and `growthStages` are private.  
-   - Getters and setters control access, e.g., `getName()` and `setName()`.
+   - Fields such as `name`, `type`, `growthStages`, and `fertilizerSchedule` are private.  
+   - Access is managed via methods like `getName()`, `getCurrentGrowthStage()`, and `setFertilizerSchedule()`.
 
 2. **CropInfo Class**  
-   - The `crops` list is private.  
-   - Controlled through `getCrops()` and `getCropByName()` methods.
+   - Encapsulates the `crops` list and the `newCrops` set as private.  
+   - Methods like `getCrops()` and `addCrop()` control access and manipulation of these fields.  
+   - Uses a singleton design pattern to ensure controlled instantiation.
 
 3. **CropManagement Class**  
-   - Fields such as `plantedCrops`, `cropInfo`, and `inventory` are private.  
-   - Methods like `plantCrop()` ensure validations and restrict unauthorized modifications.
+   - Fields `plantedCrops`, `cropInfo`, and `inventory` are private.  
+   - Methods such as `plantCrop()` and `displayWateringSchedule()` ensure validations and restrict direct field access.
 
 4. **PlantedCrop Class**  
-   - Fields `crop` and `plantingDate` are private with controlled access.  
+   - Fields `crop` and `plantingDate` are private.  
+   - Access is controlled via methods like `getCrop()` and `getGrowthStage()`.
 
 5. **Inventory Class**  
    - The `inventory` map is private.  
-   - Managed via methods like `useSeed()` and `restockItem()`.
+   - Methods like `useItem()`, `restockItem()`, and `displayInventory()` abstract and manage inventory operations.
 
 6. **InventoryManager Class**  
-   - Encapsulates inventory operations, restricting direct access to inventory details.
+   - Encapsulates the `inventory` object.  
+   - Provides methods like `updateInventory()` and `restockItem()` for controlled resource management.
 
 7. **FarmerNotes Class**  
-   - The `notes` list is private, with controlled access through `addNote()` and `viewNotes()`.
+   - The `notes` list is private.  
+   - Managed through methods such as `addNote()` and `viewNotes()` to simplify user interactions.
 
 8. **Note Class**  
-   - Fields `date` and `content` are private, with public getters and setters for access.
+   - Fields `date` and `content` are private.  
+   - Public methods like `getDate()` and `toString()` expose or format note details as required.
 
-9. **FarmerUser Class**  
-   - User data (`username`, `password`, etc.) is encapsulated.  
-   - Public methods like `login()` and `register()` handle secure interactions.
+9. **User Classes**  
+   - `AdminUser` and `FarmerUser` encapsulate user data (e.g., `username`, `password`) as private.  
+   - Authentication and registration methods (`login()`, `register()`) manage access securely.
 
 ---
 
 ### A.1 **Package Encapsulation**  
 Classes are grouped into packages, restricting unnecessary access:  
 1. **Crop Management Package:**  
-   Includes `Crop`, `CropManagement`, and `PlantWiki`. Details are hidden within the package, and public interfaces expose necessary functionality.
-   
-2. **User Management Package:**  
-   Contains `FarmerUser` and `PremiumFarmerUser` for managing user authentication and permissions.
+   Contains `Crop`, `CropInfo`, and `CropManagement` to manage planting, growth, and crop metadata.  
+
+2. **User Package:**  
+   Contains `AdminUser` and `FarmerUser` to handle authentication and user-specific features.  
 
 3. **Inventory Package:**  
-   Encapsulates `Inventory` and `InventoryManager` to handle resources while hiding internal storage mechanisms.
+   Encapsulates `Inventory` and `InventoryManager` for resource tracking and management.  
+
+4. **Miscellaneous Package:**  
+   Contains `FarmerNotes` and related helper classes to support auxiliary functionalities.
 
 ---
 
 ### 🧬B. Inheritance
-While no explicit inheritance (`extends`) is present in the application, the code can be extended to introduce parent-child relationships for reusable or common behaviors. Future enhancements might include:
+Inheritance is used to share common attributes and behaviors among related classes.
 
-1. Creating a base `User` class for shared user functionalities.  
-2. Extending `Crop` into more specialized crop types.
+**User Classes**  
+   - `AdminUser` extends `User`, inheriting fields like `username` and `password` and overriding specific methods for admin functionalities.
 
 ---
 
@@ -101,14 +109,13 @@ While no explicit inheritance (`extends`) is present in the application, the cod
 Polymorphism is used to allow methods to behave differently depending on the context.
 
 1. **Method Overriding**  
-   - **Crop Class**: Overrides `toString()` to provide a custom string representation of a crop.  
+   - `Crop` overrides the `toString()` method to provide a detailed string representation.
 
-2. **Dynamic Behavior**  
-   - **CropManagement Class**: Calls the `getCurrentGrowthStage()` method of the `Crop` class, where the behavior changes based on crop-specific growth stages.  
-   - **FarmerUser Class**: Uses the `login()` method, which behaves differently based on input.
+2. **Dynamic Method Calls**  
+   - In `CropManagement`, methods like `getCurrentGrowthStage()` call crop-specific logic, allowing flexibility for different crop growth patterns.
 
-3. **Switch-Case Constructs**  
-   - Used in classes like `CropManagement` and `Main` to handle user choices dynamically.
+3. **Switch-Case Logic**  
+   - Used in `Main` and `CropManagement` to handle user inputs and actions dynamically.
 
 ---
 
@@ -116,28 +123,23 @@ Polymorphism is used to allow methods to behave differently depending on the con
 Abstraction is used to hide complex logic and expose only the necessary details through high-level methods and interfaces.
 
 1. **Crop Class**  
-   - Abstracts growth stage logic through `getCurrentGrowthStage()`.
+   - Abstracts growth and fertilizer schedules via methods like `getCurrentGrowthStage()` and `getFertilizerSchedule()`.
 
 2. **CropInfo Class**  
-   - Abstracts crop initialization via `initializeCrops()` to hide details of creating predefined crops.
+   - Hides crop initialization logic within `initializeCrops()` and exposes high-level methods like `viewPlantWiki()`.
 
 3. **CropManagement Class**  
-   - Hides details of planting, watering, fertilizing, and growth tracking through dedicated methods (`plantCrop()`, `displayWateringSchedule()`, etc.).
+   - Abstracts functionalities like planting, growth tracking, and schedules into methods (`plantCrop()`, `viewCropGrowth()`).
 
-4. **PlantedCrop Class**  
-   - Abstracts growth stage tracking via the `getGrowthStage()` method.
+4. **Inventory Classes**  
+   - `Inventory` abstracts inventory storage and operations.  
+   - `InventoryManager` serves as an interface for updating and viewing inventory details.
 
-5. **Inventory Class**  
-   - Abstracts inventory operations like seed usage, restocking, and displaying items.
+5. **FarmerNotes Class**  
+   - Abstracts note addition and retrieval through high-level methods (`addNote()`, `viewNotes()`).
 
-6. **InventoryManager Class**  
-   - Provides a simplified interface for managing inventory, hiding internal implementation details.
-
-7. **FarmerNotes Class**  
-   - Abstracts note addition and retrieval, exposing user-friendly methods.
-
-8. **Main Class**  
-   - Orchestrates interactions between different components (`FarmerUser`, `CropManagement`, etc.), hiding their complexities from the user.
+6. **Main Class**  
+   - Serves as the orchestrator for user interaction, managing sessions, and invoking other classes seamlessly.
 
 ---
 
