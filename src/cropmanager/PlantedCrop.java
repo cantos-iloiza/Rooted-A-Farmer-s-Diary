@@ -16,8 +16,16 @@ public class PlantedCrop {
         return crop;
     }
 
+    public void setCrop(Crop crop) {
+        this.crop = crop;
+    }
+
     public LocalDate getPlantingDate() {
         return plantingDate;
+    }
+
+    public void setPlantingDate(LocalDate plantingDate) {
+        this.plantingDate = plantingDate;
     }
 
     public String getGrowthStage() {

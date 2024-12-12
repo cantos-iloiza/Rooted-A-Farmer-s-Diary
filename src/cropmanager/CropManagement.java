@@ -1,5 +1,6 @@
 package cropmanager;
 
+import inventory.Inventory;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -11,67 +12,86 @@ public class CropManagement {
     private ArrayList<PlantedCrop> plantedCrops;
     private CropInfo cropInfo;
     private Inventory inventory; 
+    private int cropIndex;
 
     public CropManagement(CropInfo cropInfo, Inventory inventory) {
         this.cropInfo = cropInfo;
-        this.inventory = inventory; 
+        this.inventory = inventory;
         this.plantedCrops = new ArrayList<>();
-    }
+    }    
 
     public void manageCrops(Scanner scanner, ArrayList<PlantedCrop> userCrops) {
         this.plantedCrops = userCrops; 
+
         while (true) {
             System.out.println("\n\n\n\nWelcome to Crop Management, Farmer!");
-            System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<");
+            System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>");
             System.out.println("1. Plant a crop");
             System.out.println("2. View watering schedule");
             System.out.println("3. View fertilizer schedule");
             System.out.println("4. View crop growth");
             System.out.println("5. Return to main menu");
-            System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<");
+            System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>");
             System.out.print("Enter your choice: ");
     
             int choice = scanner.nextInt();
             scanner.nextLine();
     
             switch (choice) {
-                case 1 -> plantCrop(scanner);
-                case 2 -> displayWateringSchedule();
-                case 3 -> displayFertilizerSchedule();
-                case 4 -> viewCropGrowth();
-                case 5 -> {
+                case 1:
+                    plantCrop(scanner);
+                    break;
+                case 2:
+                    displayWateringSchedule();
+                    break;
+                case 3:
+                    displayFertilizerSchedule();
+                    break;
+                case 4:
+                    viewCropGrowth();
+                    break;
+                case 5:
                     System.out.println("Returning to the main menu...");
                     return;
-                }
-                default -> System.out.println("Invalid choice. Please try again.");
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
     }    
 
     public void plantCrop(Scanner scanner) {
         System.out.println("\n\nAvailable crops:");
-        cropInfo.getCrops().forEach(crop -> System.out.println("- " + crop.getName()));
-        System.out.print("Enter the crop name to plant: ");
-        String cropName = scanner.nextLine();
-
-        Crop crop = getCrop(cropName);
-        if (crop == null) {
-            System.out.println("Invalid crop name. Returning to menu.");
+        int index = 1;
+        for (Crop crop : cropInfo.getCrops()) {
+            System.out.println(index + ". " + crop.getName());
+            index++;
+        }
+    
+        System.out.print("Enter the index of the crop to plant: ");
+        int cropIndex = scanner.nextInt();
+        scanner.nextLine();
+    
+        if (cropIndex < 1 || cropIndex > cropInfo.getCrops().size()) {
+            System.out.println("Invalid crop index. Returning to menu.");
             return;
         }
-
-        if (!inventory.useSeed(cropName)) {
+    
+        Crop crop = cropInfo.getCrops().get(cropIndex - 1);
+        if (!inventory.useSeed(crop.getName())) {
             System.out.println("Unable to plant crop. Please restock seeds.");
-            return; 
+            return;
         }
-
-        System.out.print("Enter the planting date (yyyy-MM-dd): ");
+    
+        System.out.print("Enter the planting date (MM-dd-yyyy): ");
         try {
-            LocalDate plantingDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            LocalDate plantingDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("MM-dd-yyyy"));
             plantedCrops.add(new PlantedCrop(crop, plantingDate));
             System.out.println("Successfully planted " + crop.getName() + " on " + plantingDate);
-        } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format. Please enter the date in yyyy-MM-dd format.");
+        } 
+        
+        catch (DateTimeParseException e) {
+            System.out.println("Invalid date format. Please enter the date in MM-dd-yyyy format.");
         }
     }
 
@@ -151,12 +171,27 @@ public class CropManagement {
         }
     }
 
-    public Crop getCrop(String cropName) {
-        for (Crop crop : cropInfo.getCrops()) {
-            if (crop.getName().equalsIgnoreCase(cropName)) {
-                return crop;
-            }
-        }
-        return null;
+    public CropInfo getCropInfo() {
+        return cropInfo;
+    }
+
+    public void setCropInfo(CropInfo cropInfo) {
+        this.cropInfo = cropInfo;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public int getCropIndex() {
+        return cropIndex;
+    }
+
+    public void setCropIndex(int cropIndex) {
+        this.cropIndex = cropIndex;
     }
 }

@@ -2,41 +2,33 @@ package cropmanager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
+import java.util.Set;
 
-public class CropInfo {
-    private ArrayList<Crop> crops = this.initializeCrops();
+public final class CropInfo {
+    private static CropInfo instance;
+    private ArrayList<Crop> crops = new ArrayList<>();
+    private Set<String> newCrops = new HashSet<>();
 
-    public CropInfo() {
+    private CropInfo() {
         this.crops = initializeCrops();
     }
 
-    public void viewPlantWiki(Scanner var1) {
-        System.out.println("\n\nWelcome to PlantWiki, Farmer!");
-        System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<");
-        System.out.println("Available crops:");
-        this.crops.forEach((var0) -> {
-            System.out.println(" - " + var0.getName());
-        });
-        System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<");
-        String var2;
-        do {
-            System.out.print("Enter the crop name to view details, or 'exit' to return: ");
-            var2 = var1.nextLine();
+    public static CropInfo getInstance() {
+        if (instance == null) {
+            instance = new CropInfo();
+        }
+        return instance;
+    }
 
-            if (!var2.equalsIgnoreCase("exit")) {
-                Crop var3 = this.getCropByName(var2);
-                
-                if (var3 != null) {
-                    System.out.println(var3);
-                } 
-                
-                else {
-                    System.out.println("Crop not found.");
-                }
-            }
-        } while(!var2.equalsIgnoreCase("exit"));
+    public ArrayList<String> getCropNames() {
+        ArrayList<String> cropNames = new ArrayList<>();
+        for (Crop crop : crops) {
+            cropNames.add(crop.getName());
+        }
+        return cropNames;
     }
 
     public ArrayList<Crop> initializeCrops() {
@@ -49,6 +41,7 @@ public class CropInfo {
         peanutGrowth.put("Budding", 85);
         peanutGrowth.put("Flowering", 110);
         peanutGrowth.put("Harvest", 132);
+
         LinkedHashMap<String, Integer> peanutFertilizer = new LinkedHashMap<>();
         peanutFertilizer.put("First Application", 20);
         peanutFertilizer.put("Second Application", 45);
@@ -62,6 +55,7 @@ public class CropInfo {
         monggoGrowth.put("Budding", 60);
         monggoGrowth.put("Flowering", 80);
         monggoGrowth.put("Harvest", 100);
+
         LinkedHashMap<String, Integer> monggoFertilizer = new LinkedHashMap<>();
         monggoFertilizer.put("First Application", 12);
         monggoFertilizer.put("Second Application", 23);
@@ -75,6 +69,7 @@ public class CropInfo {
         sitawGrowth.put("Budding", 35);
         sitawGrowth.put("Flowering", 50);
         sitawGrowth.put("Harvest", 65);
+
         LinkedHashMap<String, Integer> sitawFertilizer = new LinkedHashMap<>();
         sitawFertilizer.put("First Application", 10);
         sitawFertilizer.put("Second Application", 18);
@@ -88,6 +83,7 @@ public class CropInfo {
         pechayGrowth.put("Budding", 20);
         pechayGrowth.put("Flowering", 28);
         pechayGrowth.put("Harvest", 35);
+
         LinkedHashMap<String, Integer> pechayFertilizer = new LinkedHashMap<>();
         pechayFertilizer.put("First Application", 7);
         pechayFertilizer.put("Second Application", 12);
@@ -101,6 +97,7 @@ public class CropInfo {
         eggplantGrowth.put("Budding", 40);
         eggplantGrowth.put("Flowering", 55);
         eggplantGrowth.put("Harvest", 70);
+
         LinkedHashMap<String, Integer> eggplantFertilizer = new LinkedHashMap<>();
         eggplantFertilizer.put("First Application", 12);
         eggplantFertilizer.put("Second Application", 20);
@@ -114,6 +111,7 @@ public class CropInfo {
         okraGrowth.put("Budding", 35);
         okraGrowth.put("Flowering", 48);
         okraGrowth.put("Harvest", 60);
+
         LinkedHashMap<String, Integer> okraFertilizer = new LinkedHashMap<>();
         okraFertilizer.put("First Application", 10);
         okraFertilizer.put("Second Application", 18);
@@ -127,6 +125,7 @@ public class CropInfo {
         chiliGrowth.put("Budding", 40);
         chiliGrowth.put("Flowering", 55);
         chiliGrowth.put("Harvest", 75);
+
         LinkedHashMap<String, Integer> chiliFertilizer = new LinkedHashMap<>();
         chiliFertilizer.put("First Application", 12);
         chiliFertilizer.put("Second Application", 20);
@@ -140,6 +139,7 @@ public class CropInfo {
         squashGrowth.put("Budding", 45);
         squashGrowth.put("Flowering", 60);
         squashGrowth.put("Harvest", 80);
+
         LinkedHashMap<String, Integer> squashFertilizer = new LinkedHashMap<>();
         squashFertilizer.put("First Application", 14);
         squashFertilizer.put("Second Application", 24);
@@ -153,6 +153,7 @@ public class CropInfo {
         ampalayaGrowth.put("Budding", 35);
         ampalayaGrowth.put("Flowering", 50);
         ampalayaGrowth.put("Harvest", 65);
+
         LinkedHashMap<String, Integer> ampalayaFertilizer = new LinkedHashMap<>();
         ampalayaFertilizer.put("First Application", 10);
         ampalayaFertilizer.put("Second Application", 20);
@@ -166,6 +167,7 @@ public class CropInfo {
         cornGrowth.put("Budding", 50);
         cornGrowth.put("Flowering", 75);
         cornGrowth.put("Harvest", 100);
+
         LinkedHashMap<String, Integer> cornFertilizer = new LinkedHashMap<>();
         cornFertilizer.put("First Application", 12);
         cornFertilizer.put("Second Application", 25);
@@ -175,17 +177,64 @@ public class CropInfo {
         return localCrops;
     }
 
+    public void addCrop(Crop crop) {
+        crops.add(crop);
+    }
+
     public ArrayList<Crop> getCrops() {
         return crops;
     }
 
-    public Crop getCropByName(String cropName) {
-        for (Crop crop : crops) {
-            if (crop.getName().equalsIgnoreCase(cropName)) {
-                return crop;
+    public void viewPlantWiki(Scanner scanner) {
+        System.out.println("\nWelcome to PlantWiki!");
+        for (int i = 0; i < crops.size(); i++) {
+            System.out.println((i + 1) + ". " + crops.get(i).getName());
+        }    
+
+        String input;
+        do {
+            System.out.print("Enter the crop number to view details, or 'x' to return: ");
+            input = scanner.nextLine();
+
+            if (!input.equalsIgnoreCase("x")) {
+                try {
+                    int index = Integer.parseInt(input) - 1; 
+                    if (index >= 0 && index < crops.size()) {
+                        Crop selectedCrop = crops.get(index);
+                        System.out.println("\nDetails for " + selectedCrop.getName() + ":");
+                        System.out.println("Type: " + selectedCrop.getType());
+                        System.out.println("Season: " + selectedCrop.getSeasonStart() + " to " + selectedCrop.getSeasonEnd());
+                        System.out.println("Watering schedule: Every " + selectedCrop.getWateringSchedule() + " days");
+    
+                        System.out.println("Fertilizer schedule: ");
+                        selectedCrop.getFertilizerSchedule().forEach((key, value) -> 
+                            System.out.println(key + " on day " + value)
+                        );
+                    } 
+                    
+                    else {
+                        System.out.println("Invalid number. Try again.");
+                    }
+                } 
+                
+                catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Enter a valid number.");
+                }
             }
-        }
-        return null;
+        } 
+        
+        while (!input.equalsIgnoreCase("x"));
     }
 
+    public void setCrops(ArrayList<Crop> crops) {
+        this.crops = crops;
+    }
+
+    public Set<String> getNewCrops() {
+        return newCrops;
+    }
+
+    public void setNewCrops(Set<String> newCrops) {
+        this.newCrops = newCrops;
+    }
 }

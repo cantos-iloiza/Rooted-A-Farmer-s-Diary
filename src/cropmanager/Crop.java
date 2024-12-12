@@ -11,9 +11,7 @@ public class Crop {
     private HashMap<String, Integer> fertilizerSchedule;
     private int wateringSchedule;
 
-    public Crop(String name, String type, int seasonStart, int seasonEnd,
-                HashMap<String, Integer> growthStages, HashMap<String, Integer> fertilizerSchedule,
-                int wateringSchedule) {
+    public Crop(String name, String type, int seasonStart, int seasonEnd, HashMap<String, Integer> growthStages, HashMap<String, Integer> fertilizerSchedule, int wateringSchedule) {
         this.name = name;
         this.type = type;
         this.seasonStart = seasonStart;
@@ -23,16 +21,51 @@ public class Crop {
         this.wateringSchedule = wateringSchedule;
     }
 
-    public String getName() {
-        return name;
+    public String getName() { 
+        return name; 
     }
 
-    public int getWateringSchedule() {
-        return wateringSchedule;
+    public void setName(String name) { 
+        this.name = name; 
     }
 
-    public HashMap<String, Integer> getFertilizerSchedule() {
-        return fertilizerSchedule;
+    public String getType() { 
+        return type; 
+    }
+    public void setType(String type) { 
+        this.type = type; 
+    }
+
+    public int getSeasonStart() { 
+        return seasonStart; 
+    }
+    public void setSeasonStart(int seasonStart) { 
+        this.seasonStart = seasonStart; 
+    }
+
+    public int getSeasonEnd() { return seasonEnd; }
+    public void setSeasonEnd(int seasonEnd) { 
+        this.seasonEnd = seasonEnd; 
+    }
+
+    public HashMap<String, Integer> getGrowthStages() { 
+        return growthStages; 
+    }
+
+    public void setGrowthStages(HashMap<String, Integer> growthStages) { 
+        this.growthStages = growthStages; 
+    }
+
+    public HashMap<String, Integer> getFertilizerSchedule() { return fertilizerSchedule; }
+    public void setFertilizerSchedule(HashMap<String, Integer> fertilizerSchedule) { 
+        this.fertilizerSchedule = fertilizerSchedule; 
+    }
+
+    public int getWateringSchedule() { 
+        return wateringSchedule; 
+    }
+    public void setWateringSchedule(int wateringSchedule) { 
+        this.wateringSchedule = wateringSchedule; 
     }
 
     public String getCurrentGrowthStage(int daysSincePlanting) {
@@ -46,7 +79,10 @@ public class Crop {
 
     @Override
     public String toString() {
-        return "\n\nCrop: " + name + "\nType: " + type + "\nSeason: " + seasonStart + " to " + seasonEnd +
-               "\nWatering every " + wateringSchedule + " days\nFertilizer schedule: " + fertilizerSchedule;
+        return "\nCrop: " + name + 
+               "\nType: " + type + 
+               "\nSeason: " + seasonStart + " to " + seasonEnd +
+               "\nWatering every " + wateringSchedule + " days" +
+               "\nFertilizer schedule: " + fertilizerSchedule;
     }
 }
