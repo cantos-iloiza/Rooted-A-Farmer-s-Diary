@@ -78,7 +78,10 @@ public class FarmerNotes {
         } 
         
         else {
-            System.out.println("\n\nViewing all notes:");
+            System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:><:>:<:>");
+            System.out.println("<:>      Viewing all notes:    <:>");
+            System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:><:>:<:>");
+            
             for (int i = 0; i < notes.size(); i++) {
                 System.out.println((i + 1) + ". " + notes.get(i));
             }

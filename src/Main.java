@@ -21,7 +21,11 @@ public class Main {
         InventoryManager inventoryManager = new InventoryManager(inventory);
 
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("\nWelcome to Rooted: A Farmer's Diary!");
+            System.out.println(" ______                  __            __ ");
+            System.out.println("|   __ \\ .-----..-----.|  |_ .-----..|   |");
+            System.out.println("|      <|  _  ||  _  ||   _||  -__||  _  |");
+            System.out.println("|___|__||_____||_____||____||_____||_____|");
+            System.out.println();
             userDate = initializeDate(scanner);
 
             System.out.println("Press Enter to Start!");
@@ -30,9 +34,11 @@ public class Main {
             boolean appRunning = true;
 
             while (appRunning) {
-                System.out.println("\n\n\n1. Be a Farmer");
-                System.out.println("2. Be the Admin");
-                System.out.println("3. Exit");
+                System.out.println("\n\n\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+                System.out.println("<:>      1. Be a Farmer     <:>");
+                System.out.println("<:>      2. Be the Admin    <:>");
+                System.out.println("<:>      3. Exit            <:>");
+                System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
                 System.out.print("Today, I choose to: ");
 
                 int option = getValidatedChoice(scanner);
@@ -58,10 +64,12 @@ public class Main {
     private static void handleFarmerOption(Scanner scanner) {
         boolean farmerMenuActive = true;
         while (farmerMenuActive) {
-            System.out.println("\nFarmer Menu:");
-            System.out.println("1. Log In");
-            System.out.println("2. Sign Up");
-            System.out.println("3. Return");
+            System.out.println("\n\n\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+            System.out.println("<:>        Farmer Menu      <:>");            
+            System.out.println("<:>      1. Log in          <:>");
+            System.out.println("<:>      2. Sign up         <:>");
+            System.out.println("<:>      3. Return          <:>");
+            System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
             System.out.print("Choose an option: ");
 
             int farmerChoice = getValidatedChoice(scanner);

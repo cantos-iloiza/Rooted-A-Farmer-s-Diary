@@ -22,7 +22,10 @@ public class Inventory {
     }
 
     public void displayInventory() {
-        System.out.println("\n\nCurrent Inventory:");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+        System.out.println("<:>      Current Inventory:     <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+
         int index = 1;
         for (String cropName : inventory.keySet()) {
             System.out.println(index + ". " + cropName + ": " + inventory.get(cropName));

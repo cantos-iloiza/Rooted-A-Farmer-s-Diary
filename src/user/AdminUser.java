@@ -15,7 +15,9 @@ public class AdminUser extends User {
     }
 
     public void addNewCrop(CropInfo cropInfo, InventoryManager inventoryManager, Scanner scanner) {
-        System.out.println("\nNew Crop Update:");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>:<:><:>");
+        System.out.println("<:>                     New Crop Update:                      <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>:<:><:>");
         String name = getInputString(scanner, "Enter crop name: ");
         String type = getInputString(scanner, "Enter crop type: ");
         int seasonStart = getInputInt(scanner, "Enter season start (1-12): ");

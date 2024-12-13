@@ -98,7 +98,8 @@ public class FarmerUser {
     }
 
     public void viewAvailableCrops(CropInfo cropInfo) {
-        System.out.println("\nAvailable crops:");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+        System.out.println("<:>       Available crops:      <:>");
         int index = 1;
         for (Crop crop : cropInfo.getCrops()) {
             System.out.println(index + ". " + crop.getName());

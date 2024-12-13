@@ -186,7 +186,10 @@ public final class CropInfo {
     }
 
     public void viewPlantWiki(Scanner scanner) {
-        System.out.println("\nWelcome to PlantWiki!");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+        System.out.println("<:>    Welcome to PlantWiki!   <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+
         for (int i = 0; i < crops.size(); i++) {
             System.out.println((i + 1) + ". " + crops.get(i).getName());
         }    
@@ -201,7 +204,11 @@ public final class CropInfo {
                     int index = Integer.parseInt(input) - 1; 
                     if (index >= 0 && index < crops.size()) {
                         Crop selectedCrop = crops.get(index);
-                        System.out.println("\nDetails for " + selectedCrop.getName() + ":");
+
+                        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+                        System.out.println("               Details for " + selectedCrop.getName() + "               ");
+                        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+
                         System.out.println("Type: " + selectedCrop.getType());
                         System.out.println("Season: " + selectedCrop.getSeasonStart() + " to " + selectedCrop.getSeasonEnd());
                         System.out.println("Watering schedule: Every " + selectedCrop.getWateringSchedule() + " days");

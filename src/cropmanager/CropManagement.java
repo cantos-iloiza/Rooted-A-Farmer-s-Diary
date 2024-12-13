@@ -61,7 +61,10 @@ public class CropManagement {
     }    
 
     public void plantCrop(Scanner scanner) {
-        System.out.println("\n\nAvailable crops:");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+        System.out.println("<:>      Available crops:      <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+        
         int index = 1;
         for (Crop crop : cropInfo.getCrops()) {
             System.out.println(index + ". " + crop.getName());
@@ -101,7 +104,10 @@ public class CropManagement {
             return;
         }
     
-        System.out.println("\n\nWatering Schedule:");
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:><:><:><:><:>");
+        System.out.println("<:>           Watering Schedule:           <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:><:><:><:><:>");
+
         for (PlantedCrop plantedCrop : plantedCrops) {
             Crop crop = plantedCrop.getCrop();
             LocalDate plantingDate = plantedCrop.getPlantingDate();
@@ -123,8 +129,11 @@ public class CropManagement {
             System.out.println("No crops planted yet.");
             return;
         }
-    
-        System.out.println("\n\nFertilizer Schedule:");
+        
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+        System.out.println("<:>    Fertilizer Schedule:    <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:><:>");
+
         for (PlantedCrop plantedCrop : plantedCrops) {
             Crop crop = plantedCrop.getCrop();
             LocalDate plantingDate = plantedCrop.getPlantingDate();
@@ -159,8 +168,10 @@ public class CropManagement {
             System.out.println("No crops planted yet.");
             return;
         }
-    
-        System.out.println("\n\nPlanted Crops and Their Growth Stages:");
+
+        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
+        System.out.println("<:>      Planted Crops and Their Growth Stages:     <:>");
+        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
         for (PlantedCrop plantedCrop : plantedCrops) {
             Crop crop = plantedCrop.getCrop();
             LocalDate plantingDate = plantedCrop.getPlantingDate();
