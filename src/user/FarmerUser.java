@@ -24,11 +24,6 @@ public class FarmerUser extends User {
         super(username, password);
     }
 
-    @Override
-    public boolean login(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
-    }
-
     public static FarmerUser authenticate(String username, String password) {
         for (FarmerUser user : registeredUsers) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
@@ -70,5 +65,10 @@ public class FarmerUser extends User {
 
     public void setFarmerNotes(FarmerNotes farmerNotes) {
         this.farmerNotes = farmerNotes;
+    }
+
+    @Override
+    public boolean login(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
     }
 }
