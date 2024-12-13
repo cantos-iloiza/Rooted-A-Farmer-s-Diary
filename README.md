@@ -1,4 +1,7 @@
-# Rooted: A Farmer's Diary 🌱
+
+
+https://github.com/user-attachments/assets/ee5d5388-86a7-44f5-b4b5-9a8bcd6ffc15
+
 
 ---
 
