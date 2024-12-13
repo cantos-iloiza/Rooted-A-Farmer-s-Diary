@@ -20,7 +20,8 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 4. [How to Run the Program 💻➡️📜](#iv-how-to-run-the-program)
    - [Starting the Program 🚀](#a-starting-the-program)
    - [Program Walkthrough 📋](#b-program-walkthrough)
-   - [Key Features 🔑](#c-key-features)
+   - [Key Features Key Features for FarmerUser🔑](#c1-key-features-for-farmeruser)
+   - [Key Features Key Features for Admin🔑](#c2-key-features-for-admin)
    - [Exiting the Program 🚪](#d-exiting-the-program)
 
 ---
@@ -141,6 +142,10 @@ Abstraction is used to hide complex logic and expose only the necessary details 
 6. **Main Class**  
    - Serves as the orchestrator for user interaction, managing sessions, and invoking other classes seamlessly.
 
+7. **User Classes**  
+   - The `User` class abstracts common functionality such as fields (`username`, `password`) and the `login()` method.  
+   - `AdminUser` and `FarmerUser` extend `User`, specializing functionality (e.g., managing inventory for admins and tracking crops for farmers).  
+
 ---
 
 ## 🌍III. Integration of SDGs 
@@ -169,12 +174,13 @@ Abstraction is used to hide complex logic and expose only the necessary details 
 
 #### 1. **Welcome Screen**  
 - Displays a greeting and prompts you to enter today's date in the format `MM-dd-yyyy`.
+- You may choose to be the admin or a farmer user.
 
 #### 2. **Login or Sign Up**  
 - Choose to log in with existing credentials or create a new account.  
 - Successful registration redirects to the main menu.
 
-#### 3. **Main Menu**  
+#### 3.1. **FarmerUser's Main Menu**  
 Options available:  
 - **1. Crop Management:** Manage crops (e.g., planting, watering, fertilizing).  
 - **2. PlantWiki:** Learn about crop details and schedules.  
@@ -182,9 +188,14 @@ Options available:
 - **4. Inventory:** View or update resources.  
 - **5. Log Out:** Return to the login menu.
 
+#### 3.2. **Admin's Main Menu** 
+- **1. Add a Crop:** Update the current CropInfo with newly-added crops.
+- **2. View PlantWiki** Verify if the new crops have been added and can be accessed.
+- **3. Manage Inventory:** Verify if the new crops have been added and can be updated in the inventory (admin's inventory only). 
+
 ---
 
-### 🔑C. **Key Features** 
+### 🔑C.1 **Key Features for FarmerUser** 
 
 #### 1. **Crop Management**  
 - **Plant a Crop:** Select a crop, check seed availability, and provide the planting date.  
@@ -202,6 +213,16 @@ Options available:
 #### 4. **Inventory Management**  
 - View current items in the inventory.  
 - Restock or use resources by specifying names and quantities.
+
+### 🔑C.2 **Key Features for Admin**
+#### 1. **Add New Crop**
+- The Admin can insert new crop information to the system (crop name, crop type, season start and end, watering and fertilizer schedule.
+
+#### 2. **View PlantWiki**
+- The Admin can verify if their newly-added crops have been stored in the system.
+
+#### 3. **Manage Inventory** 
+- The Admin can verify if the newly-added crops have also been stored and recognized in the inventory.
 
 ---
 
