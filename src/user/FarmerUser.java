@@ -8,6 +8,9 @@ import miscellaneous.FarmerNotes;
 
 public class FarmerUser extends User {
     private static List<FarmerUser> registeredUsers = new ArrayList<>();
+    private ArrayList<PlantedCrop> plantedCrops = new ArrayList<>();
+    private Inventory inventory = new Inventory();
+    private FarmerNotes farmerNotes = new FarmerNotes();
 
     public static List<FarmerUser> getRegisteredUsers() {
         return registeredUsers;
@@ -16,9 +19,6 @@ public class FarmerUser extends User {
     public static void setRegisteredUsers(List<FarmerUser> registeredUsers) {
         FarmerUser.registeredUsers = registeredUsers;
     }
-    private ArrayList<PlantedCrop> plantedCrops = new ArrayList<>();
-    private Inventory inventory = new Inventory();
-    private FarmerNotes farmerNotes = new FarmerNotes();
 
     public FarmerUser(String username, String password) {
         super(username, password);
