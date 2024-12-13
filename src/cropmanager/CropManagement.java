@@ -172,7 +172,6 @@ public class CropManagement {
         System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
         System.out.println("<:>      Planted Crops and Their Growth Stages:     <:>");
         System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
-        
         for (PlantedCrop plantedCrop : plantedCrops) {
             Crop crop = plantedCrop.getCrop();
             LocalDate plantingDate = plantedCrop.getPlantingDate();

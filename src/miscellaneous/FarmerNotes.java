@@ -6,7 +6,7 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FarmerNotes {
+public class FarmerNotes extends NotesManager {
     private final ArrayList<Note> notes = new ArrayList<>();
 
     public void manageNotes(Scanner scanner) {
@@ -44,7 +44,8 @@ public class FarmerNotes {
         System.out.print("Enter your choice: ");
     }
 
-    private void addNote(Scanner scanner) {
+    @Override
+    public void addNote(Scanner scanner) {
         LocalDate noteDate = getNoteDate(scanner);
 
         System.out.print("Enter your note: ");
@@ -72,7 +73,8 @@ public class FarmerNotes {
         return noteDate;
     }
 
-    private void viewNotes() {
+    @Override
+    public void viewNotes() {
         if (notes.isEmpty()) {
             System.out.println("No notes available.");
         } 

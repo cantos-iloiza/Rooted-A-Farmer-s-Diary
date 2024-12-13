@@ -129,5 +129,10 @@ public class AdminUser extends User {
                 System.out.print("Invalid input. Please enter a valid number: ");
             }
         }
-    }    
+    } 
+    
+    @Override
+    public boolean login(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
 }

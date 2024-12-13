@@ -216,7 +216,7 @@ public class Main {
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
 
-        FarmerUser user = FarmerUser.login(username, password);
+        FarmerUser user = FarmerUser.authenticate(username, password);
         if (user != null) {
             System.out.println("Login successful! Welcome back, Farmer " + username + "!");
         } 

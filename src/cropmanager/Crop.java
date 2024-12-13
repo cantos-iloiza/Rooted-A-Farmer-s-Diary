@@ -56,10 +56,7 @@ public class Crop {
         this.growthStages = growthStages; 
     }
 
-    public HashMap<String, Integer> getFertilizerSchedule() { 
-        return fertilizerSchedule; 
-    }
-    
+    public HashMap<String, Integer> getFertilizerSchedule() { return fertilizerSchedule; }
     public void setFertilizerSchedule(HashMap<String, Integer> fertilizerSchedule) { 
         this.fertilizerSchedule = fertilizerSchedule; 
     }
