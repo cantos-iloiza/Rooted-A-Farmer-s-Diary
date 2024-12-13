@@ -106,6 +106,8 @@ Inheritance is used to share common attributes and behaviors among related class
 
 **User Classes**  
    - `AdminUser` extends `User`, inheriting fields like `username` and `password` and overriding specific methods for admin functionalities.
+   - `FarmerUser` extends `User`, inheriting fields like `username` and `password` and overriding specific methods for farmerUser functionalities.
+   - `FarmerNotes` extends `NotesManager` to inherit methods like `addNote` and `viewNotes`.
 
 ---
 
@@ -114,40 +116,21 @@ Polymorphism is used to allow methods to behave differently depending on the con
 
 1. **Method Overriding**  
    - `Crop` overrides the `toString()` method to provide a detailed string representation.
-
-2. **Dynamic Method Calls**  
-   - In `CropManagement`, methods like `getCurrentGrowthStage()` call crop-specific logic, allowing flexibility for different crop growth patterns.
-
-3. **Switch-Case Logic**  
-   - Used in `Main` and `CropManagement` to handle user inputs and actions dynamically.
+   - `FarmerUser` overrides the `login` method to verify username and password credentials.
+   - `FarmerNotes` overrides both `addNoted` and `viewNotes` method to implement them properly.
 
 ---
 
 ### ✨D. Abstraction
 Abstraction is used to hide complex logic and expose only the necessary details through high-level methods and interfaces.
 
-1. **Crop Class**  
-   - Abstracts growth and fertilizer schedules via methods like `getCurrentGrowthStage()` and `getFertilizerSchedule()`.
-
-2. **CropInfo Class**  
-   - Hides crop initialization logic within `initializeCrops()` and exposes high-level methods like `viewPlantWiki()`.
-
-3. **CropManagement Class**  
-   - Abstracts functionalities like planting, growth tracking, and schedules into methods (`plantCrop()`, `viewCropGrowth()`).
-
-4. **Inventory Classes**  
-   - `Inventory` abstracts inventory storage and operations.  
-   - `InventoryManager` serves as an interface for updating and viewing inventory details.
-
-5. **FarmerNotes Class**  
-   - Abstracts note addition and retrieval through high-level methods (`addNote()`, `viewNotes()`).
-
-6. **Main Class**  
-   - Serves as the orchestrator for user interaction, managing sessions, and invoking other classes seamlessly.
-
-7. **User Classes**  
-   - The `User` class abstracts common functionality such as fields (`username`, `password`) and the `login()` method.  
-   - `AdminUser` and `FarmerUser` extend `User`, specializing functionality (e.g., managing inventory for admins and tracking crops for farmers).  
+1. **User Class** 
+   - The `User` class is now abstract, abstracting common user functionalities such as `username`, `password`, and the `login()` method. Specific user classes (e.g., `AdminUser`, `FarmerUser`) extend `User` and implement the `login()` method for their specialized behavior.
+   - The `login()` method is abstract in `User`, requiring derived classes to implement the actual authentication logic.
+  
+2. **FarmerNotes Class**  
+   - `FarmerNotes` extends the abstract class `NotesManager` and provides a concrete implementation for managing notes specific to farmers.  
+   - The class manages an `ArrayList` of `Note` objects, providing methods to add new notes and view existing ones. By extending `NotesManager`, `FarmerNotes` inherits the abstract note management operations and provides its own implementation. 
 
 ---
 
