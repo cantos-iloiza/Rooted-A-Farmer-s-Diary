@@ -3,6 +3,7 @@ package user;
 public abstract class User {
     protected String username;
     protected String password;
+    public abstract boolean login(String username, String password);
 
     public User(String username, String password) {
         this.username = username;
@@ -24,6 +25,4 @@ public abstract class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public abstract boolean login(String username, String password);
 }
