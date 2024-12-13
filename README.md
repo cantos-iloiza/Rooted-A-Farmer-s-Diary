@@ -81,6 +81,8 @@ Encapsulation is widely used in the application by declaring fields as `private`
    - `AdminUser` and `FarmerUser` encapsulate user data (e.g., `username`, `password`) as private.  
    - Authentication and registration methods (`login()`, `register()`) manage access securely.
 
+10. **Main Class**
+   - Fields `plantedCrops` and `userDate` used private access.
 ---
 
 ### A.1 **Package Encapsulation**  
