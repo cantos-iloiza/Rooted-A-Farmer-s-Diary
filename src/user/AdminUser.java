@@ -58,7 +58,8 @@ public class AdminUser extends User {
         LinkedHashMap<String, Integer> growthStages = new LinkedHashMap<>();
         while (true) {
             String stageName = getInputString(scanner, "Enter growth stage name (or 'x' to finish): ");
-            if (stageName.equalsIgnoreCase("x")) break;
+            if (stageName.equalsIgnoreCase("x")) 
+                break;
 
             int duration = getInputInt(scanner, "Enter duration for this stage (days): ");
             growthStages.put(stageName, duration);
@@ -70,7 +71,8 @@ public class AdminUser extends User {
         LinkedHashMap<String, Integer> fertilizerSchedule = new LinkedHashMap<>();
         while (true) {
             String stageName = getInputString(scanner, "Enter fertilizer stage name (or 'x' to finish): ");
-            if (stageName.equalsIgnoreCase("x")) break;
+            if (stageName.equalsIgnoreCase("x")) 
+                break;
 
             int day = getInputInt(scanner, "Enter application day for this stage: ");
             fertilizerSchedule.put(stageName, day);
