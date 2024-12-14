@@ -1,6 +1,3 @@
-![file_2390850](https://github.com/user-attachments/assets/045aa341-8da9-4480-8d03-8ce9b7f077c9)
-
----
 
 <p align="center">
   <img width="460" height="300" src="https://github.com/user-attachments/assets/b0f7a435-e2ff-4b20-ad17-8f73bbcbcb8d">
