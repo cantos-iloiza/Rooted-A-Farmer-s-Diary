@@ -5,6 +5,10 @@
 
 ---
 
+[Video Presentation]((https://drive.google.com/file/d/1CmhMyjzeQJrWEjU5aBs-bPFDwLmbe3VW/view?usp=sharing))
+
+---
+
 A tool for small-scale and home-based farmers to monitor crop growth, manage resources, and optimize planting schedules, supporting **SDG 2 (Zero Hunger)** and **SDG 12 (Responsible Consumption and Production).**
 
 ---
