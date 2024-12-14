@@ -2,7 +2,9 @@
 
 ---
 
-![Green Bold Playful Nature Video (2)](https://github.com/user-attachments/assets/b0f7a435-e2ff-4b20-ad17-8f73bbcbcb8d)
+<p align="center">
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/b0f7a435-e2ff-4b20-ad17-8f73bbcbcb8d">
+</p>
 
 ---
 
