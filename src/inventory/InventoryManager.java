@@ -19,7 +19,7 @@ public class InventoryManager {
         while (!backToMenu) {
             displayMenu();
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -60,7 +60,7 @@ public class InventoryManager {
         }
 
         int quantity = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         if (quantity < 0) {
             inventory.useItem(item, -quantity);
