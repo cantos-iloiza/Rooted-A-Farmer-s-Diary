@@ -23,8 +23,8 @@ CREATE TABLE crops (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE,
     type VARCHAR(100) NOT NULL,
-    season_start INT NOT NULL, -- 1-12 representing months
-    season_end INT NOT NULL,   -- 1-12 representing months
+    season_start INT NOT NULL, 
+    season_end INT NOT NULL,   
     watering_schedule INT NOT NULL
 );
 
