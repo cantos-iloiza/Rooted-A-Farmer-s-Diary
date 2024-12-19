@@ -20,7 +20,10 @@ A tool for small-scale and home-based farmers to monitor crop growth, manage res
 3. [Integration of SDGs 🌍](#iii-integration-of-sdgs)
    - [SDG 2: Zero Hunger 🌾🥦🍅](#sdg-2-zero-hunger)
    - [SDG 12: Responsible Consumption and Production ♻️💧⚙️](#sdg-12-responsible-consumption-and-production)
-4. [How to Run the Program 💻➡️📜](#iv-how-to-run-the-program)
+4. [Database Integration with MySQL 💾](#iv-database-integration-with-mysql)
+   - [Database Schema 🛠️](#a-database-schema)
+   - [CRUD Operations 🔄](#b-crud-operations)
+5. [How to Run the Program 💻➡️📜](#v-how-to-run-the-program)
    - [Starting the Program 🚀](#a-starting-the-program)
    - [Program Walkthrough 📋](#b-program-walkthrough)
    - [Key Features Key Features for FarmerUser🔑](#c1-key-features-for-farmeruser)
@@ -149,8 +152,72 @@ Abstraction is used to hide complex logic and expose only the necessary details 
 - Encourages sustainable farming by providing optimized schedules to prevent overuse.
 
 ---
+## 💾IV. Database Integration with MySQL
 
-## 💻➡️📜IV. How to Run the Program  
+### 🛠️A. Database Schema
+
+The system uses a **MySQL database** for data persistence. Key tables include:
+
+1. **`admin_users`**  
+   - Stores admin credentials (`username`, `password`).
+
+2. **`farmer_users`**  
+   - Stores farmer credentials.
+
+3. **`crops`**  
+   - Stores crop information such as name, type, seasons, and watering schedules.
+
+4. **`inventory`**  
+   - Tracks available resources like seeds and fertilizer.
+
+5. **`crop_growth_stages`**  
+   - Records growth stages (e.g., sprouting, budding) for each crop.
+
+6. **`crop_fertilizer_schedule`**  
+   - Maintains fertilizer application schedules.
+
+7. **`planted_crops`**  
+   - Links farmers with their planted crops and planting dates.
+
+---
+
+### 🔄B. CRUD Operations
+
+The project demonstrates effective **CRUD** operations:
+
+1. **Create**
+   - Tables are created with `CREATE TABLE` statements.
+   - Data is added using `INSERT INTO`, e.g.,:
+     ```sql
+     INSERT INTO crops (name, type, season_start, season_end, watering_schedule) 
+     VALUES ('Peanut', 'Legume', 2, 3, 7);
+     ```
+
+2. **Read**
+   - Fetch data using `SELECT`:
+     ```sql
+     SELECT * FROM crops;
+     ```
+
+3. **Update**
+   - Modify table structures or data:
+     ```sql
+     ALTER TABLE crop_growth_stages 
+     ADD COLUMN sprouting_day INT;
+     ```
+
+4. **Delete**
+   - Remove records or columns:
+     ```sql
+     ALTER TABLE crop_fertilizer_schedule 
+     DROP COLUMN application_day;
+     ```
+
+**Cascading Deletes:** When a crop is deleted, associated growth stages and fertilizer schedules are automatically removed.
+
+---
+
+## 💻➡️📜V. How to Run the Program  
 
 ### 🚀A. **Starting the Program**   
 1. Use **Visual Studio Code** (or any Java-supported IDE).  
