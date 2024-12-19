@@ -1,90 +1,85 @@
 package inventory;
 
-import cropmanager.CropInfo;
+import db.JDBCConnector;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Inventory {
     private HashMap<String, Integer> inventory;
-    private CropInfo cropInfo;
 
     public Inventory() {
         this.inventory = new HashMap<>();
-        initializeDefaultInventory();
+        loadInventoryFromDatabase();
     }
 
-    private void initializeDefaultInventory() {
-        String[] crops = { "Peanut", "Monggo", "Sitaw", "Pechay", "Eggplant", "Okra", "Chili", "Squash", "Ampalaya", "Corn" };
-        for (String crop : crops) {
-            inventory.put(crop, 5);
+    private void loadInventoryFromDatabase() {
+        try (Connection conn = JDBCConnector.getConnection()) {
+            String query = "SELECT * FROM inventory";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                inventory.put(rs.getString("item_name"), rs.getInt("quantity"));
+            }
+        } 
+        catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error loading inventory from database.");
         }
-        inventory.put("Fertilizer", 7);
-        inventory.put("Pesticide Spray", 4);
     }
 
     public void displayInventory() {
-        System.out.println("\n<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
-        System.out.println("<:>      Current Inventory:     <:>");
-        System.out.println("<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>:<:>");
-
+        System.out.println("\n<:>      Current Inventory:     <:>");
         int index = 1;
-        for (String cropName : inventory.keySet()) {
-            System.out.println(index + ". " + cropName + ": " + inventory.get(cropName));
+        for (String item : inventory.keySet()) {
+            System.out.println(index + ". " + item + ": " + inventory.get(item));
             index++;
         }
     }
 
-    public void useItem(String itemToUse, int quantity) {
-        if (inventory.containsKey(itemToUse) && inventory.get(itemToUse) >= quantity) {
-            inventory.put(itemToUse, inventory.get(itemToUse) - quantity);
-            System.out.println("Used " + quantity + " units of " + itemToUse + ". Remaining: " + inventory.get(itemToUse));
+    public boolean useItem(String itemName, int quantity) {
+        if (inventory.containsKey(itemName)) {
+            int currentQuantity = inventory.get(itemName);
+            if (currentQuantity >= quantity) {
+                inventory.put(itemName, currentQuantity - quantity);
+                System.out.println("Used " + quantity + " of " + itemName + ". Remaining: " + inventory.get(itemName));
+                return true;
+            } 
+            else {
+                System.out.println("Not enough " + itemName + ". Available: " + currentQuantity);
+                return false;
+            }
         } 
-        
         else {
-            System.out.println((inventory.containsKey(itemToUse) ?
-                    "Not enough " + itemToUse + " in inventory." : itemToUse + " not found."));
-        }
-    }
-
-    public void restockItem(String itemToRestock, int quantityToAdd) {
-        inventory.put(itemToRestock, inventory.getOrDefault(itemToRestock, 0) + quantityToAdd);
-        System.out.println("Restocked " + quantityToAdd + " units of " + itemToRestock + ". Total now: " + inventory.get(itemToRestock));
-    }
-
-    public HashMap<String, Integer> getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(HashMap<String, Integer> inventory) {
-        this.inventory = inventory;
-    }
-
-    public void addOrUpdateItem(String itemName, int quantity) {
-        inventory.put(itemName, inventory.getOrDefault(itemName, 0) + quantity);
-        System.out.println("Item '" + itemName + "' updated with quantity " + quantity);
-    }
-
-    public boolean useSeed(String seedName) {
-        if (inventory.containsKey(seedName) && inventory.get(seedName) > 0) {
-            inventory.put(seedName, inventory.get(seedName) - 1);
-            System.out.println("Used 1 seed of " + seedName + ". Remaining: " + inventory.get(seedName));
-            return true;
-        } 
-        
-        else {
-            System.out.println("No seeds of " + seedName + " available.");
+            System.out.println(itemName + " does not exist in inventory.");
             return false;
         }
     }
 
-    public boolean useSeed(int cropIndex) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void restockItem(String itemName, int quantity) {
+        inventory.put(itemName, inventory.getOrDefault(itemName, 0) + quantity);
+        System.out.println("Restocked " + quantity + " of " + itemName);
     }
 
-    public CropInfo getCropInfo() {
-        return cropInfo;
+    public void saveInventory(String username) {
+    try (Connection conn = JDBCConnector.getConnection()) {
+        for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
+            String query = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setInt(1, entry.getValue());
+                stmt.setString(2, entry.getKey());
+                stmt.executeUpdate();
+            }
+        }
+    } 
+    catch (SQLException e) {
+        e.printStackTrace();
+        System.out.println("Error saving inventory for " + username);
     }
+}
 
-    public void setCropInfo(CropInfo cropInfo) {
-        this.cropInfo = cropInfo;
-    }
 }
